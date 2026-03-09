@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts | Studio Aurora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <nav class="navbar">
+          <a class="brand" href="index-en.html">
+            <strong>Studio Aurora</strong>
+            <span>Dr. Elena Ferri</span>
+          </a>
+          <div class="nav-side">
+            <div class="nav-links">
+              <a href="index-en.html">Home</a>
+              <a href="contatti-en.html">Contacts</a>
+              <a href="blog-en.html">Blog</a>
+            </div>
+            <div class="lang-switch" aria-label="Language switcher">
+              <a href="contatti.html">ITA</a>
+              <a class="is-active" href="contatti-en.html">ENG</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <section class="page-title reveal">
+        <h1>Contacts and first consultation</h1>
+        <p>
+          Fill in the form to request information or book an appointment.
+          You will receive a reply within 24 business hours.
+        </p>
+      </section>
+
+      <main class="form-layout">
+        <section class="surface reveal">
+          <h2>Write to me</h2>
+          <form id="contactForm" data-endpoint="https://formspree.io/f/YOUR_FORMSPREE_ID" novalidate>
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="Optional" />
+            </div>
+            <div>
+              <label for="mode">Session type</label>
+              <select id="mode" name="mode">
+                <option value="online">Online</option>
+                <option value="studio">In office</option>
+                <option value="entrambi">Both</option>
+              </select>
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <div>
+              <label for="privacy">
+                <input id="privacy" name="privacy" type="checkbox" required />
+                I have read the privacy policy and consent to data processing.
+              </label>
+            </div>
+            <button class="btn btn-primary" type="submit">Send request</button>
+            <p id="formStatus" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <aside class="surface info-list reveal">
+          <div class="info-item">
+            <strong>Contacts</strong>
+            <p>Email: info@studioaurora.it<br />Phone: +39 02 1234 5678</p>
+          </div>
+          <div class="info-item">
+            <strong>Hours</strong>
+            <p>Mon - Fri: 9:00 - 19:30<br />Sat: 9:00 - 13:00</p>
+          </div>
+          <div class="info-item">
+            <strong>Session options</strong>
+            <p>Online on a secure platform or in office by appointment.</p>
+          </div>
+          <div class="info-item">
+            <strong>Office location</strong>
+            <p>Via della Serenità 18, Milan<br />Easy access by metro and bus.</p>
+          </div>
+          <div class="info-item">
+            <strong>Office map</strong>
+            <div class="map-wrap">
+              <iframe
+                title="Studio Aurora map - Milan"
+                src="https://maps.google.com/maps?q=Milano%20Porta%20Venezia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <footer class="site-footer">
+        <span>© 2026 Studio Aurora - Dr. Elena Ferri</span>
+        <span><a href="privacy-en.html">Privacy Policy</a> · <a href="cookie-en.html">Cookie Policy</a></span>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

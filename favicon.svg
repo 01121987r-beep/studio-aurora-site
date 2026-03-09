@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Studio Aurora">
+  <rect width="64" height="64" rx="14" fill="#d5e2ee"/>
+  <rect x="7" y="7" width="50" height="50" rx="11" fill="#cfded2"/>
+  <circle cx="32" cy="32" r="12" fill="#fbf9f4"/>
+  <path d="M22 39c3-5 6-7 10-7s7 2 10 7" fill="none" stroke="#5b6570" stroke-width="2.6" stroke-linecap="round"/>
+</svg>
