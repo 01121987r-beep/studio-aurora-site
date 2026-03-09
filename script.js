@@ -31,6 +31,44 @@ const uiText = isEnglishPage
       cookieHref: 'cookie.html'
     };
 
+function setupMobileDropdownMenu() {
+  const navbar = document.querySelector('.navbar');
+  const navSide = document.querySelector('.nav-side');
+  if (!navbar || !navSide || navbar.querySelector('.mobile-nav-toggle')) {
+    return;
+  }
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'mobile-nav-toggle';
+  button.setAttribute('aria-expanded', 'false');
+  button.setAttribute('aria-label', isEnglishPage ? 'Open menu' : 'Apri menu');
+  button.innerHTML = '<span></span><span></span><span></span>';
+
+  navbar.insertBefore(button, navSide);
+
+  button.addEventListener('click', () => {
+    const isOpen = navbar.classList.toggle('is-open');
+    button.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navSide.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navbar.classList.remove('is-open');
+      button.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 720) {
+      navbar.classList.remove('is-open');
+      button.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+setupMobileDropdownMenu();
+
 if (reveals.length) {
   const observer = new IntersectionObserver(
     (entries) => {

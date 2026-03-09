@@ -62,6 +62,27 @@ a {
   padding: 0.85rem 1.1rem;
 }
 
+.mobile-nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(91, 101, 112, 0.2);
+  background: rgba(255, 255, 255, 0.82);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.mobile-nav-toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text-strong);
+}
+
 .brand {
   display: flex;
   flex-direction: column;
@@ -605,43 +626,47 @@ textarea {
   }
 
   .navbar {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-      "brand switch"
-      "links links";
+    display: flex;
+    flex-wrap: wrap;
     align-items: start;
-    row-gap: 0.55rem;
+    row-gap: 0.6rem;
   }
 
-  .brand {
-    grid-area: brand;
+  .mobile-nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
   }
 
   .nav-side {
-    display: contents;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+    padding: 0.25rem 0 0.2rem;
+  }
+
+  .navbar.is-open .nav-side {
+    display: flex;
   }
 
   .nav-links {
-    grid-area: links;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 0.45rem;
   }
 
   .nav-links a {
-    text-align: center;
+    text-align: left;
     padding: 0.6rem 0.45rem;
     background: rgba(255, 255, 255, 0.72);
     border: 1px solid rgba(91, 101, 112, 0.12);
   }
 
   .lang-switch {
-    grid-area: switch;
-    justify-self: end;
-    align-self: start;
-    margin-top: 0.15rem;
+    align-self: flex-start;
+    margin-top: 0.1rem;
   }
 
   .blog-grid,
