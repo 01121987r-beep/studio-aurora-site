@@ -45,6 +45,13 @@ function setupMobileDropdownMenu() {
   button.setAttribute('aria-label', isEnglishPage ? 'Open menu' : 'Apri menu');
   button.innerHTML = '<span></span><span></span><span></span>';
 
+  const desktopLangSwitch = navSide.querySelector('.lang-switch');
+  if (desktopLangSwitch && !navbar.querySelector('.mobile-lang-switch')) {
+    const mobileLangSwitch = desktopLangSwitch.cloneNode(true);
+    mobileLangSwitch.classList.add('mobile-lang-switch');
+    navbar.insertBefore(mobileLangSwitch, navSide);
+  }
+
   navbar.insertBefore(button, navSide);
 
   button.addEventListener('click', () => {
